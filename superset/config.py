@@ -103,7 +103,6 @@ PACKAGE_JSON_FILE = pkg_resources.resource_filename(
 #     "rel": "icon"
 # },
 FAVICONS = [{"href": "/static/assets/images/favicon.png"}]
-TAB_TITLE = None
 
 
 def _try_json_readversion(filepath: str) -> Optional[str]:
@@ -988,7 +987,9 @@ SMTP_USER = "superset"
 SMTP_PORT = 25
 SMTP_PASSWORD = "superset"
 SMTP_MAIL_FROM = "superset@superset.com"
-
+# If True creates a default SSL context with ssl.Purpose.CLIENT_AUTH using the
+# default system root CA certificates.
+SMTP_SSL_SERVER_AUTH = False
 ENABLE_CHUNK_ENCODING = False
 
 # Whether to bump the logging level to ERROR on the flask_appbuilder package
